@@ -1,4 +1,4 @@
-import { NextApiHandler } from 'next';
+import { NextApiRequest, NextApiResponse } from 'next';
 
 const { DISCORD_CLIENT_ID, DISCORD_REDIRECT_URI } = process.env;
 
@@ -6,10 +6,9 @@ const scopes = ['identify', 'email'];
 
 const discordAuthUrl = `https://discord.com/api/oauth2/authorize?client_id=${DISCORD_CLIENT_ID}&redirect_uri=${DISCORD_REDIRECT_URI}&response_type=code&scope=${scopes.join(' ')}`;
 
-const handler: NextApiHandler = (_req, res) => {
-  const data = { url: discordAuthUrl };
-  res.setHeader('Content-Type', 'application/json');
-  res.end(JSON.stringify(data));
-};
 
-export default handler;
+export default (req: NextApiRequest, res: NextApiResponse) => {
+    const data = { url: discordAuthUrl };
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(data));
+};
