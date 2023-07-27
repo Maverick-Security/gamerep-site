@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 const LoginPage = () => {
   useEffect(() => {
     // Fetch the Discord authorization URL from your API route
-    fetch('/auth/login')
+    fetch('/api/auth/login')
       .then((response) => response.json())
       .then((data) => {
         // Redirect the user to the Discord authorization URL
