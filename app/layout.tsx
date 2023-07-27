@@ -1,13 +1,11 @@
-import '../css/global.css';
+import React from 'react';
 
-export default function RootLayout({
-    children,
-  }: {
-    children: React.ReactNode
-  }) {
-    return (
-      <html lang="en">
-        <body>{children}</body>
-      </html>
-    )
-  }
+const RootLayout: React.FC = ({ children }) => {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  );
+};
+
+export default RootLayout;
