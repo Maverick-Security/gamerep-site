@@ -3,7 +3,7 @@ import RootLayout from '../app/layout'; // Add this import statement
 
 const HomePage: React.FC = () => {
   return (
-    <div>
+    <div className="container-fluid text-center">
       <h1>Welcome to my Next.js app with Bootstrap!</h1>
     </div>
   );
